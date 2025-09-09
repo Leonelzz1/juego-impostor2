@@ -1,0 +1,136 @@
+/* style.css
+   Tema oscuro, moderno y centrado.
+*/
+
+:root{
+  --bg: #0f1115;
+  --card: #14161a;
+  --muted: #9aa1ab;
+  --accent: #5eead4;
+  --primary: #60a5fa;
+  --danger: #fb7185;
+  --glass: rgba(255,255,255,0.03);
+  --radius: 14px;
+  --pad: 18px;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg, #07080a 0%, #0b0c0f 100%);
+  color:#e6eef6;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.container{
+  width:100%;
+  max-width:900px;
+  padding:20px;
+}
+
+/* Card */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:var(--radius);
+  padding:var(--pad);
+  box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+  margin: 16px auto;
+  text-align:center;
+  backdrop-filter: blur(6px);
+}
+
+h1{margin:6px 0 12px;font-size:28px}
+h2{margin:6px 0 14px;font-size:20px;color:var(--accent)}
+
+.field{margin:12px 0;text-align:left}
+.field label{display:block;margin-bottom:6px;color:var(--muted);font-size:13px}
+.field input{
+  width:100%;
+  padding:12px 14px;
+  background:var(--glass);
+  border:1px solid rgba(255,255,255,0.03);
+  border-radius:10px;
+  color: #e6eef6;
+  outline:none;
+  font-size:15px;
+}
+
+/* Buttons */
+.btn{
+  padding:12px 18px;
+  border-radius:12px;
+  border:0;
+  cursor:pointer;
+  font-weight:600;
+  letter-spacing:0.3px;
+  min-width:160px;
+  transition:transform .12s ease, box-shadow .12s;
+  background: rgba(255,255,255,0.03);
+  color: #eaf2ff;
+  box-shadow: 0 4px 18px rgba(2,6,23,0.6);
+}
+.btn:hover{transform:translateY(-3px)}
+.btn.primary{
+  background: linear-gradient(90deg, rgba(96,165,250,0.18), rgba(94,234,212,0.08));
+  border: 1px solid rgba(96,165,250,0.12);
+  color: white;
+}
+
+/* Layout helpers */
+.row{display:flex;gap:12px;justify-content:center;margin-top:12px}
+.row.space{justify-content:space-between;align-items:center}
+.divider{color:var(--muted);margin-top:10px}
+
+/* Players list */
+.players{
+  list-style:none;
+  padding:0;
+  margin:10px 0;
+  max-height:180px;
+  overflow:auto;
+}
+.players li{
+  text-align:left;
+  padding:10px 12px;
+  margin:6px 0;
+  background:rgba(255,255,255,0.02);
+  border-radius:10px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-weight:600;
+  color:#dbeafe;
+}
+
+/* Word box */
+.word-box{
+  margin:16px auto;
+  padding:14px;
+  border-radius:12px;
+  background: rgba(255,255,255,0.02);
+  width:100%;
+  max-width:560px;
+  text-align:center;
+}
+.label{color:var(--muted);font-size:13px;margin-bottom:6px}
+.secret-word{font-size:22px;font-weight:700;color:var(--accent)}
+
+/* Messages */
+.message{margin-top:12px;color:var(--muted);font-size:14px}
+
+/* Visibility helpers */
+.hidden{display:none}
+.visible{display:block}
+
+/* Small screens */
+@media (max-width:560px){
+  .card{padding:16px}
+  .btn{min-width:120px}
+}
