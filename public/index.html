@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>El Impostor — Juego Social</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <!-- Pantalla de inicio -->
+    <section id="start-screen" class="card visible">
+      <h1>El Impostor</h1>
+      <div class="field">
+        <label for="nameInput">Nombre</label>
+        <input id="nameInput" type="text" placeholder="Tu nombre..." />
+      </div>
+
+      <div class="row">
+        <button id="createBtn" class="btn primary">CREAR SALA</button>
+      </div>
+
+      <div class="divider">— o —</div>
+
+      <div class="field">
+        <label for="roomCodeInput">Código de Sala</label>
+        <input id="roomCodeInput" type="text" maxlength="4" placeholder="ABCD" />
+      </div>
+      <div class="row">
+        <button id="joinBtn" class="btn">UNIRSE A SALA</button>
+      </div>
+      <div id="startMessage" class="message"></div>
+    </section>
+
+    <!-- Lobby -->
+    <section id="lobby-screen" class="card hidden">
+      <h2>Lobby — Sala <span id="lobbyRoomCode"></span></h2>
+      <div class="sub">Jugadores:</div>
+      <ul id="playersList" class="players"></ul>
+      <div class="row space">
+        <button id="startGameBtn" class="btn primary hidden">EMPEZAR PARTIDA</button>
+        <button id="leaveBtn" class="btn">SALIR</button>
+      </div>
+      <div id="lobbyMessage" class="message"></div>
+    </section>
+
+    <!-- Game Screen -->
+    <section id="game-screen" class="card hidden">
+      <h2>Partida — Sala <span id="gameRoomCode"></span></h2>
+      <div class="info-row">
+        <div><strong>Tu rol:</strong> <span id="yourRole">—</span></div>
+        <div><strong>Turno:</strong> <span id="turnOwner">—</span></div>
+      </div>
+
+      <div id="wordBox" class="word-box">
+        <div class="label">Palabra secreta</div>
+        <div id="secretWord" class="secret-word">—</div>
+      </div>
+
+      <div id="impostorBox" class="word-box hidden">
+        <div class="label">Eres el Impostor</div>
+        <div class="secret-word">Mantén el misterio.</div>
+      </div>
+
+      <div class="row">
+        <button id="nextTurnBtn" class="btn">SIGUIENTE TURNO</button>
+      </div>
+
+      <div id="gameMessage" class="message"></div>
+    </section>
+  </main>
+
+  <!-- Socket.IO cliente (servido desde el servidor) -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
