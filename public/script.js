@@ -8,7 +8,7 @@
  */
 
 // IMPORTANTE: ¡CAMBIA ESTA LÍNEA POR LA URL DE TU SERVIDOR PÚBLICO!
-const socket = io(); // Si tu servidor es remoto, reemplaza por: io("https://mi-servidor.com")
+const socket = io("https://juego-impostor2.onrender.com"); // Si tu servidor es remoto, reemplaza por: io("https://mi-servidor.com")
 
 // --- Elementos DOM ---
 const startScreen = document.getElementById('start-screen');
